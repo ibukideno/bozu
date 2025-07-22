@@ -54,23 +54,21 @@ let score=0;
 const $button=document.getElementsByTagName("button");
 const buttonLength=$button.length;
 
-const setupQuiz=()=>{
-    document.getElementById("js-question").textContent=quiz[quizIndex].question;
-    let buttonIndex=0;
-    while(buttonIndex<buttonLength){
-        $button[buttonIndex].textContent=quiz[quizIndex].answers[buttonIndex];
-        buttonIndex++;
-    }
-}
+const setupQuiz = () => {
+  document.getElementById("js-question").textContent = quiz[quizIndex].question;
+  for (let i = 0; i < buttonLength; i++) {
+    $button[i].textContent = quiz[quizIndex].answers[i];
+  }
+};
 
 setupQuiz();
 
 const clickHandler=(e)=>{
     if(quiz[quizIndex].correct===e.target.textContent){
-        window.alert("正解！");
+        alert("正解！");
         score++;
        }else{
-        window.alert("残念！");
+        alert("残念！");
        }
 
      quizIndex++;
@@ -89,13 +87,7 @@ const clickHandler=(e)=>{
      }
 };
 
-let handlerIndex=0;
-
-while(handlerIndex<buttonLength){
-    $button[handlerIndex].addEventListener("click",(e)=>{
-        clickHandler(e);
-    });
-    handlerIndex++;
+for (let i = 0; i < buttonLength; i++) {
+  $button[i].addEventListener("click", clickHandler);
 }
-
 
