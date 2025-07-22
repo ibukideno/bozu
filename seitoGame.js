@@ -51,7 +51,7 @@ const quizLength=quiz.length;
 let quizIndex=0;
 let score=0;
 
-const $button=document.getElementsByTagName("button");
+const $button=document.getElementsByTagName("quiz-button");
 const buttonLength=$button.length;
 
 const setupQuiz = () => {
