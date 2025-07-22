@@ -78,6 +78,7 @@ const clickHandler=(e)=>{
       window.alert("お疲れちゃん！あなたの正解数は"+score+"/"+quizLength+"です！")
        // 「初めに戻る」ボタンを表示する
  　　　 const restartBtn = document.getElementById("restart-btn");
+       restartBtn.textContent = "初めに戻る";
   　　　restartBtn.style.display = "inline-block";
 
   　　　// ボタンクリックでリロード（最初に戻る）
